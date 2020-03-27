@@ -11,6 +11,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Library.Data;
 using Library.DataAccess;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 
 namespace Library.WebMVC
 {
@@ -29,9 +30,11 @@ namespace Library.WebMVC
             services.AddDbContext<LibraryDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddTransient<ILibraryAssetService, LibraryAssetService>();
+            services
+                .AddTransient<ILibraryAssetService, LibraryAssetService>()
+                .AddTransient<ICheckoutService, CheckoutService>();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,4 +1,5 @@
-﻿@model Library.WebMVC.Models.Catalog.AssetDetailModel
+﻿@using Library.WebMVC.Models.Catalog
+@model AssetDetailModel
 
 @{
     ViewData["Title"] = @Model.Title;
@@ -44,7 +45,7 @@
 
                 else
                 {
-                    <p>This item has been lost. It cannot be checked out.</p>
+                    <p id="lostItemDiscription">This item has been lost. It can't be checked out.</p>
                     <p><a class="btn btn-lg btn-success" role="button" asp-controller="Catalog" asp-action="MarkFound" asp-route-id="@Model.AssetId">Mark Item Found</a></p>
                 }
 
@@ -65,6 +66,65 @@
                     </tr>
                 </table>
             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <h4>Checkout History</h4>
+            <table class="table table-bordered table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>Date Loaned</th>
+                        <th>Date Returned</th>
+                        <th>Card Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var checkout in @Model.CheckoutHistory)
+                    {
+                        <tr>
+                            <td>
+                                @checkout.CheckedOut
+                            </td>
+                            <td>
+                                @checkout.CheckedIn
+                            </td>
+                            <td>
+                                @checkout.LibraryCard.Id
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <h4>Current Holds</h4>
+            <table class="table table-bordered table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>Hold Placed</th>
+                        <th>Patron</th>
+                        <th>Card Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var hold in @Model.CurrentHolds)
+                    {
+                        <tr>
+                            <td>
+                                @hold.HoldPlaced
+                            </td>
+                            <td>
+                                @hold.PatronName
+                            </td>
+                            <td>
+                                @hold.PatronCardId
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
