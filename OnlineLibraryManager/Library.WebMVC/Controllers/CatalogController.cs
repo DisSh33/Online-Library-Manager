@@ -45,7 +45,7 @@ namespace Library.WebMVC.Controllers
 
             var currentHolds = _checkoutService.GetCurrentHolds(id).Select(a => new AssetHoldModel
             {
-                PatronCardId = a.LibraryCard.Id,
+                PatronCardId = a.LibraryCard.Id.ToString(),
                 HoldPlaced = _checkoutService.GetCurrentHoldPlaced(a.Id),
                 PatronName = _checkoutService.GetCurrentHoldPatron(a.Id)
             });
