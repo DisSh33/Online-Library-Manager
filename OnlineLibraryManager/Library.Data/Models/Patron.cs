@@ -29,9 +29,6 @@ namespace Library.Data.Models
         [StringLength(20)]
         public string Telephone { get; set; }
 
-        [StringLength(10)]
-        public string Gender { get; set; }
-
         [Required]
         [Display(Name = "Library Card")]
         public LibraryCard LibraryCard { get; set; }
