@@ -29,8 +29,33 @@ namespace Library.WebMVC.Controllers
                     Title = _assetsService.GetTitle(a.Id),
                     AuthorOrDirector = _assetsService.GetAuthorOrDirector(a.Id),
                     Type = _assetsService.GetType(a.Id),
-                    Dewey = _assetsService.GetDeweyIndex(a.Id)    
+                    Dewey = _assetsService.GetDeweyIndex(a.Id),
+                    NumberOfCopies = a.NumberOfCopies
                 }).ToList();
+
+            return View(model);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            var asset = _assetsService.Get(id);
+
+
+            var model = new AssetDetailModel
+            {
+                AssetId = id,
+                Title = asset.Title,
+                Type = _assetsService.GetType(id),
+                Year = asset.Year,
+                Cost = asset.Cost,
+                Status = asset.Status.Name,
+                ImageUrl = asset.ImageUrl,
+                AuthorOrDirector = _assetsService.GetAuthorOrDirector(id),
+                CurrentLocation = _assetsService.GetCurrentLocation(id)?.Name,
+                Dewey = _assetsService.GetDeweyIndex(id),
+                Isbn = _assetsService.GetIsbn(id), 
+                CurrentAssociatedLibraryCard = _assetsService.GetLibraryCardByAssetId(id),
+            };
 
             return View(model);
         }

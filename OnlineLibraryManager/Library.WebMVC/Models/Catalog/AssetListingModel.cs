@@ -12,6 +12,7 @@ namespace Library.WebMVC.Models.Catalog
         public string Title { get; set; }
         public string AuthorOrDirector { get; set; }
         public string Type { get; set; }
-        public string Dewey { get; set; } 
+        public string Dewey { get; set; }
+        public int NumberOfCopies { get; set; }
     }
 }
