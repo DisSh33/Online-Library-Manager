@@ -6,9 +6,7 @@
 }
 
 <div class="container">
-    <div class="header clearfix detailHeading">
-        <h2 class="text-muted">View Library Item</h2>
-    </div>
+    <h2 class="text-muted p-2">View Library Item</h2>
 
     <div class="jumbotron">
         <div class="row">
@@ -31,16 +29,16 @@
                 {
                     @if (@Model.Status == "Available")
                     {
-                        <p><a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="Checkout" asp-route-id="@Model.AssetId">Check Out</a></p>
+                        <p><a class="btn btn-info" role="button" asp-controller="Catalog" asp-action="Checkout" asp-route-id="@Model.AssetId">Check Out</a></p>
                     }
 
                     @if (@Model.Status == "Checked Out")
                     {
-                        <p><a class="btn btn-lg btn-success" role="button" asp-controller="Catalog" asp-action="CheckIn" asp-route-id="@Model.AssetId">Check In</a></p>
-                        <p><a class="btn btn-lg btn-warning" role="button" asp-controller="Catalog" asp-action="Hold" asp-route-id="@Model.AssetId">Place Hold</a></p>
+                        <p><a class="btn btn-success" role="button" asp-controller="Catalog" asp-action="CheckIn" asp-route-id="@Model.AssetId">Check In</a></p>
+                        <p><a class="btn btn-warning" role="button" asp-controller="Catalog" asp-action="Hold" asp-route-id="@Model.AssetId">Place Hold</a></p>
                     }
 
-                    <p><a class="btn btn-lg btn-danger" role="button" asp-controller="Catalog" asp-action="MarkLost" asp-route-id="@Model.AssetId">Mark Item Lost</a></p>
+                    <p><a class="btn btn-danger" role="button" asp-controller="Catalog" asp-action="MarkLost" asp-route-id="@Model.AssetId">Mark Item Lost</a></p>
                 }
 
                 else

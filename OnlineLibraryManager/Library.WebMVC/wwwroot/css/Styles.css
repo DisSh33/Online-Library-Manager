@@ -1,23 +1,4 @@
-﻿.logo {
-    font-family: "Coda";
-    font-size: 1.8em;
-    font-weight: bold;
-}
-
-    .logo > a {
-        color: #ddd;
-        text-decoration: none;
-        transition-duration: 0.5s;
-    }
-
-        .logo > a:hover {
-            color: #fff;
-            transition: ease;
-            text-decoration: none;
-            transition-duration: 0.5s;
-        }
-
-.page-content {
+﻿.page-content {
     padding: 20px;
     margin: 10px auto;
 }
@@ -99,19 +80,8 @@
     margin: 0 auto;
 }
 
-.customTable td {
-    text-align: left;
-    font-size: 1.2em;
-}
-
 .strongTd {
     font-weight: bold;
-}
-
-.customTable th {
-    text-align: left;
-    color: black;
-    font-size: 1.3em;
 }
 
 .imageCell {
@@ -176,10 +146,6 @@
     padding: 10px;
     font-size: 1.3em;
     color: #555;
-}
-
-.detailHeading {
-    padding: 10px;
 }
 
 #branchDescription {

@@ -5,33 +5,33 @@
     ViewData["Title"] = "Catalog";
 }
 
-<div class="container">
-<h3>Library Catalog</h3>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Title</th>
-                <th>Author / Director</th>
-                <th>Dewey</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var asset in Model)
-            {
-                <tr class="assetRow">
-                    <td class="">
-                        <div>
-                            <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@asset.Id">
-                                <img src="@asset.ImageUrl" class="imageCell" />
-                            </a>
-                        </div>
-                    </td>
-                    <td class="">@asset.Title</td>
-                    <td class="">@asset.AuthorOrDirector</td>
-                    <td class="">@asset.Dewey</td>
+    <div class="container">
+        <h1 class="text-muted display-4 text-center p-2">Library Catalog</h1>
+        <table class="table" id="catalogIndexTable">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Author / Director</th>
+                    <th>Dewey</th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                @foreach (var asset in Model)
+                {
+                    <tr>
+                        <td>
+                            <div>
+                                <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@asset.Id">
+                                    <img src="@asset.ImageUrl" class="imageCell" />
+                                </a>
+                            </div>
+                        </td>
+                        <td>@asset.Title</td>
+                        <td>@asset.AuthorOrDirector</td>
+                        <td>@asset.Dewey</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
