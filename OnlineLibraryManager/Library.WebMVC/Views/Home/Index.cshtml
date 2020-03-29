@@ -10,33 +10,33 @@
             <div class="card">
                 <img class="card-img-top" src="~/img/card2.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h2 class="card-title font-weight-light">Library Catalog</h2>
+                    <p class="card-text">View and manage library assets.</p>
                 </div>                
                 <div class="card-footer">
-                    <button class="btn btn-secondary"> Go to Catalog</button>
+                    <a asp-controller="Catalog" asp-action="Index"><div class="btn btn-secondary" asp-controller="Catalog" asp-action="Index">Go to Catalog</div></a>
+</div>
+            </div>
+
+            <div class="card">
+                <img class="card-img-top" src="~/img/card2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h2 class="card-title font-weight-light">Patrons</h2>
+                    <p class="card-text">View and manage library patron data.</p>
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Patron" asp-action="Index"><div class="btn btn-secondary"> Go to Patrons</div></a>
                 </div>
             </div>
 
             <div class="card">
                 <img class="card-img-top" src="~/img/card2.jpg" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-secondary"> Go to Catalog</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <img class="card-img-top" src="~/img/card2.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <h2 class="card-title font-weight-light">Branches</h2>
+                    <p class="card-text">View and manage library branches.</p>
                 </div>                
                 <div class="card-footer">
-                    <button class="btn btn-secondary"> Go to Catalog</button>
+                    <a asp-controller="Branch" asp-action="Index"><div class="btn btn-secondary" asp-controller="Branch" asp-action="Index"> Go to Branches</div></a>
                 </div> 
             </div>
 
