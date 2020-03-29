@@ -32,7 +32,8 @@ namespace Library.WebMVC
             services
                 .AddTransient<ILibraryAssetService, LibraryAssetService>()
                 .AddTransient<ICheckoutService, CheckoutService>()
-                .AddTransient<IPatronService, PatronService>();
+                .AddTransient<IPatronService, PatronService>()
+                .AddTransient<ILibraryBranchService, LibraryBranchService>();
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
         }

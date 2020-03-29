@@ -1,0 +1,30 @@
+﻿@using Library.WebMVC.Models.Branch
+@model IEnumerable<BranchDetailModel>
+@{
+    ViewBag.Title = "Branch Index";
+}
+<h1 class="text-muted display-4 mb-3">Branch List</h1>
+<div id="branchIndex">
+    <table class="table table-bordered" id="branchIndexTable">
+        <thead class="text-muted">
+            <tr>
+                <th>Branch Name</th>
+                <th>Adress</th>
+                <th>Number Of Assets</th>
+                <th>Number of Patrons</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var branch in Model)
+            {
+                <tr>
+                    <td><a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id">@branch.BranchName</a></td>
+                    <td>@branch.Address</td>
+                    <td>@branch.NumberOfAssets</td>
+                    <td>@branch.NumberOfPatrons</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

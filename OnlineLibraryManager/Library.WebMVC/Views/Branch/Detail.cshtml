@@ -1,0 +1,60 @@
+﻿@using Library.WebMVC.Models.Branch
+@model BranchDetailModel
+@{
+    ViewBag.Title = @Model.BranchName + " Branch";
+}
+
+
+<div class="container">
+    <div class="header clearfix detailHeading">
+        <h1 class="text-muted display-4">Branch Information</h1>
+    </div>
+    <div class="jumbotron pt-5 pb-5">
+        <div class="row">
+            <img src="~/img/card2.jpg" class="img-fluid mb-3"/>
+        </div>
+        <h1 class="mb-0">@Model.BranchName</h1>
+        <div class="row">
+            <div class="col-md-8">
+                <div>
+                    <div class="branchContact">
+                        <div>Address: <span class="font-weight-light">@Model.Address</span></div>
+                        <div>Telephone: <span class="font-weight-light">@Model.Telephone</span></div>
+                    </div>
+                    <div class="text-justify mr-4">
+                        <p>@Model.Description</p>
+                    </div>
+
+                    <div class="font-weight-light">
+                        <ul class="ml-1">
+                            @foreach (var day in @Model.HoursOpen)
+                            {
+                                <li>@day</li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <table class="table table-borderless table-sm">
+                    <tr>
+                        <td>Date Opened: </td>
+                        <td class="font-weight-light">@Model.BranchOpenedDate</td>
+                    </tr>
+                    <tr>
+                        <td>Number Of Patrons: </td>
+                        <td class="font-weight-light">@Model.NumberOfPatrons</td>
+                    </tr>
+                    <tr>
+                        <td>Number of Assets: </td>
+                        <td class="font-weight-light">@Model.NumberOfAssets</td>
+                    </tr>
+                    <tr>
+                        <td>Value of Assets: </td>
+                        <td class="font-weight-light">$@Model.TotalAssetValue</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
